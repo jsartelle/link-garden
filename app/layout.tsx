@@ -4,6 +4,7 @@ import './globals.scss'
 import config from '@/config/config.json'
 import '@/config/base.scss'
 
+// TODO easy font customization
 const inter = Inter({ subsets: ['latin'] })
 
 const icon = require(`@/config/images/${

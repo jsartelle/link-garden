@@ -4,22 +4,31 @@
   text-align: center;
 }
 
+.profile-image {
+  margin-bottom: var(--pico-typography-spacing-vertical);
+}
+
 .link-section-links {
   display: flex;
   flex-direction: column;
-  row-gap: var(--pico-form-element-spacing-vertical);
+  row-gap: var(--pico-spacing);
 }
 
-.link-button {
+.link-button,
+.link-button-link {
   display: flex;
-  padding: var(--pico-form-element-spacing-vertical)
-    var(--pico-form-element-spacing-horizontal);
   text-decoration: none;
-  column-gap: var(--pico-form-element-spacing-horizontal);
+  column-gap: var(--pico-spacing);
 }
 
 .link-button-image {
   flex-shrink: 0;
   align-self: center;
   height: auto;
+}
+
+.link-button-new-tab {
+  flex-shrink: 0;
+  align-self: center;
+  padding-inline: 24px;
 }

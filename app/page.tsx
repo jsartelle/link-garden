@@ -15,8 +15,8 @@ export default async function Home() {
               className="profile-image"
               src={require(`@/config/images/${config.profile.image}`).default}
               alt=""
-              width={96}
-              height={96}
+              width={128}
+              height={128}
               draggable={false}
             />
           )}
