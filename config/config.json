@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "Link Garden",
+    "description": "A place for all your links",
+    "icon": "leaf.svg",
+    "appleIconPNG": "leaf.png"
+  },
+  "profile": {
+    "name": "Your Name Here",
+    "description": "Write a little bit about yourself here. Maybe add some ✨emoji✨",
+    "image": "user.svg"
+  }
+}
