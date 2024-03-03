@@ -1,0 +1,9 @@
+.button {
+  display: flex;
+  border: 1px solid currentColor;
+}
+
+.icon {
+  flex-shrink: 0;
+  object-fit: contain;
+}
