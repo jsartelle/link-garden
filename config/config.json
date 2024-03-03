@@ -6,8 +6,8 @@
     "appleIconPNG": "leaf.png"
   },
   "profile": {
-    "name": "Your Name Here",
-    "description": "Write a little bit about yourself here. Maybe add some ✨emoji✨",
-    "image": "user.svg"
+    "image": "user.svg",
+    "title": "Your Name Here",
+    "description": "Write a little bit about yourself here. Maybe add some ✨emoji✨"
   }
 }

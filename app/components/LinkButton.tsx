@@ -22,11 +22,12 @@ export default function LinkButton({
           alt=""
           width={64}
           className={styles.icon}
+          draggable={false}
         />
       )}
       <div>
-        <div>{title}</div>
-        <div>{description}</div>
+        {title && <div>{title}</div>}
+        {description && <div>{description}</div>}
       </div>
     </a>
   )
