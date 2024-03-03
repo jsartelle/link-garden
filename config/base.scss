@@ -1,0 +1,25 @@
+/* Styles here are applied to all themes */
+
+.profile {
+  text-align: center;
+}
+
+.link-section-links {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--pico-form-element-spacing-vertical);
+}
+
+.link-button {
+  display: flex;
+  padding: var(--pico-form-element-spacing-vertical)
+    var(--pico-form-element-spacing-horizontal);
+  text-decoration: none;
+  column-gap: var(--pico-form-element-spacing-horizontal);
+}
+
+.link-button-image {
+  flex-shrink: 0;
+  align-self: center;
+  height: auto;
+}

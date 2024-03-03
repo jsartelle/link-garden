@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import styles from './LinkButton.module.scss'
 
 export interface LinkButtonProps {
-  title: string
+  title?: string
   href: string
   description?: string
   image?: string
@@ -15,19 +14,21 @@ export default function LinkButton({
   image,
 }: LinkButtonProps) {
   return (
-    <a href={href} className={styles.button}>
+    <a href={href} className="link-button">
       {image && (
         <Image
+          className="link-button-image"
           src={require(`@/config/images/${image}`).default}
           alt=""
           width={64}
-          className={styles.icon}
           draggable={false}
         />
       )}
       <div>
-        {title && <div>{title}</div>}
-        {description && <div>{description}</div>}
+        {title && <div className="link-button-title">{title}</div>}
+        {description && (
+          <div className="link-button-description">{description}</div>
+        )}
       </div>
     </a>
   )
