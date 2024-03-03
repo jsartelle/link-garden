@@ -2,7 +2,7 @@
 
 export interface ThemeSelectProps {
   themes: string[]
-  defaultTheme?: string
+  startingTheme?: string
 }
 
 function setTheme(theme: string) {
@@ -15,16 +15,8 @@ function setTheme(theme: string) {
 
 export default function ThemeSelect({
   themes,
-  defaultTheme,
+  startingTheme,
 }: ThemeSelectProps) {
-  const startingTheme =
-    document.cookie
-      .split('; ')
-      .find((row) => row.startsWith('linkGardenSelectedTheme='))
-      ?.split('=')[1] ??
-    defaultTheme ??
-    themes[0]
-
   return (
     <select
       defaultValue={startingTheme}

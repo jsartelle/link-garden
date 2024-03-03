@@ -1,4 +1,5 @@
 import { readdirSync } from 'fs'
+import { cookies } from 'next/headers'
 import Image from 'next/image'
 import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
@@ -9,6 +10,11 @@ import links from '@/config/links.json'
 const themes = readdirSync('./public/themes/')
 
 export default function Home() {
+  const startingTheme =
+    cookies().get('linkGardenSelectedTheme')?.value ??
+    config.metadata?.defaultTheme ??
+    themes[0]
+
   return (
     <>
       {/* TODO markdown support for profile & links */}
@@ -42,10 +48,7 @@ export default function Home() {
         ))}
       </main>
       <footer>
-        <ThemeSelect
-          themes={themes}
-          defaultTheme={config.metadata?.defaultTheme}
-        />
+        <ThemeSelect themes={themes} startingTheme={startingTheme} />
       </footer>
     </>
   )
