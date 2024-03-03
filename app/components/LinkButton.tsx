@@ -18,10 +18,9 @@ export default function LinkButton({
     <a href={href} className={styles.button}>
       {image && (
         <Image
-          src={require(`@/config/images/${image}`)}
+          src={require(`@/config/images/${image}`).default}
           alt=""
           width={64}
-          height={64}
           className={styles.icon}
         />
       )}
