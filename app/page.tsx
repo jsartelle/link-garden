@@ -44,7 +44,7 @@ export default function Home() {
       <footer>
         <ThemeSelect
           themes={themes}
-          defaultTheme={config.metadata.defaultTheme}
+          defaultTheme={config.metadata?.defaultTheme}
         />
       </footer>
     </>

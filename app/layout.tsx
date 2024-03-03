@@ -10,10 +10,10 @@ import '@/app/globals.scss'
 const inter = Inter({ subsets: ['latin'] })
 
 const icon = require(`@/config/images/${
-  config.metadata.icon ?? 'leaf.svg'
+  config.metadata?.icon ?? 'leaf.svg'
 }`).default
 const appleIcon = require(`@/config/images/${
-  config.metadata.appleIconPNG ?? 'leaf.png'
+  config.metadata?.appleIconPNG ?? 'leaf.png'
 }`).default
 
 const themes = readdirSync('./public/themes/')
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const theme =
-    cookies().get('linkGardenSelectedTheme')?.value ?? config.metadata.defaultTheme ?? themes[0]
+    cookies().get('linkGardenSelectedTheme')?.value ?? config.metadata?.defaultTheme ?? themes[0]
 
   return (
     <html lang="en">
