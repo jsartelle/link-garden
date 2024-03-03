@@ -1,10 +1,14 @@
+import { readdirSync } from 'fs'
 import Image from 'next/image'
 import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
+import ThemeSelect from '@/app/components/ThemeSelect'
 import config from '@/config/config.json'
 import links from '@/config/links.json'
 
-export default async function Home() {
+const themes = readdirSync('./public/themes/')
+
+export default function Home() {
   return (
     <>
       {/* TODO markdown support for profile & links */}
@@ -37,6 +41,12 @@ export default async function Home() {
           </LinkSection>
         ))}
       </main>
+      <footer>
+        <ThemeSelect
+          themes={themes}
+          defaultTheme={config.metadata.defaultTheme}
+        />
+      </footer>
     </>
   )
 }
