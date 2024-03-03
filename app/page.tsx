@@ -1,4 +1,4 @@
-import LinkButton, { type LinkButtonProps } from '@/app/components/LinkButton'
+import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
 import styles from '@/app/page.module.scss'
 import links from '@/config/links.json'
