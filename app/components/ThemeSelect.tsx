@@ -5,20 +5,29 @@ export interface ThemeSelectProps {
   defaultTheme?: string
 }
 
+function setTheme(theme: string) {
+  const themeLink = document.getElementById(
+    'linkGardenSelectedTheme'
+  ) as HTMLLinkElement
+  themeLink.href = `/themes/${theme}`
+  document.cookie = `linkGardenSelectedTheme=${theme}`
+}
+
 export default function ThemeSelect({
   themes,
   defaultTheme,
 }: ThemeSelectProps) {
-  function setTheme(theme: string) {
-    const themeLink = document.getElementById(
-      'linkGardenSelectedTheme'
-    ) as HTMLLinkElement
-    themeLink.href = `/themes/${theme}`
-  }
+  const startingTheme =
+    document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('linkGardenSelectedTheme='))
+      ?.split('=')[1] ??
+    defaultTheme ??
+    themes[0]
 
   return (
     <select
-      defaultValue={defaultTheme ?? themes[0]}
+      defaultValue={startingTheme}
       onChange={(e) => setTheme(e.target.value)}
     >
       {themes.map((theme, index) => (
