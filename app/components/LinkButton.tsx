@@ -5,20 +5,20 @@ export interface LinkButtonProps {
   title: string
   href: string
   description?: string
-  icon?: string
+  image?: string
 }
 
 export default function LinkButton({
   title,
   href,
   description,
-  icon,
+  image,
 }: LinkButtonProps) {
   return (
     <a href={href} className={styles.button}>
-      {icon && (
+      {image && (
         <Image
-          src={require(`@/config/icons/${icon}`)}
+          src={require(`@/config/images/${image}`)}
           alt=""
           width={64}
           height={64}
