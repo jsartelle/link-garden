@@ -7,9 +7,9 @@ import ThemeSelect from '@/app/components/ThemeSelect'
 import config from '@/config/config.json'
 import links from '@/config/links.json'
 
-const themes = readdirSync('./public/themes/')
 
 export default function Home() {
+  const themes = readdirSync('./public/themes/')
   const startingTheme =
     cookies().get('linkGardenSelectedTheme')?.value ??
     config.app?.defaultTheme ??
@@ -47,9 +47,14 @@ export default function Home() {
           </LinkSection>
         ))}
       </main>
-      <footer>
-        <ThemeSelect themes={themes} startingTheme={startingTheme} />
-      </footer>
+      {themes.length > 1 && (
+        <>
+          <footer>
+            <h1>Select Theme</h1>
+            <ThemeSelect themes={themes} startingTheme={startingTheme} />
+          </footer>
+        </>
+      )}
     </>
   )
 }

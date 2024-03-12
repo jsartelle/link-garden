@@ -5,8 +5,6 @@ import config from '@/config/config.json'
 import '@/config/base.scss'
 import '@/app/globals.scss'
 
-const themes = readdirSync('./public/themes/')
-
 const icon = require(`@/config/images/${
   config.app?.icon ?? 'leaf.svg'
 }`).default
@@ -36,6 +34,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const themes = readdirSync('./public/themes/')
   const theme =
     cookies().get('linkGardenSelectedTheme')?.value ??
     config.app?.defaultTheme ??
