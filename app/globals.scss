@@ -14,3 +14,7 @@
     ),
   )
 );
+
+:root {
+  --pico-font-family-sans-serif: var(--link-garden-font), system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
+}

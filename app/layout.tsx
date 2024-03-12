@@ -1,13 +1,11 @@
 import { readdirSync } from 'fs'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { cookies } from 'next/headers'
 import config from '@/config/config.json'
 import '@/config/base.scss'
 import '@/app/globals.scss'
 
-// TODO easy font customization
-const inter = Inter({ subsets: ['latin'] })
+const themes = readdirSync('./public/themes/')
 
 const icon = require(`@/config/images/${
   config.app?.icon ?? 'leaf.svg'
@@ -15,8 +13,6 @@ const icon = require(`@/config/images/${
 const appleIcon = require(`@/config/images/${
   config.app?.appleIconPNG ?? 'leaf.png'
 }`).default
-
-const themes = readdirSync('./public/themes/')
 
 export const metadata: Metadata = {
   title: config.app?.title ?? 'Link Garden',
@@ -31,6 +27,10 @@ export const metadata: Metadata = {
   },
 }
 
+const rootStyle: any = {
+  '--link-garden-font': config.app?.font,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,15 +42,29 @@ export default function RootLayout({
     themes[0]
 
   return (
-    <html lang="en">
+    <html lang="en" style={rootStyle}>
       <head>
         <link
           rel="stylesheet"
           id="linkGardenSelectedTheme"
           href={`/themes/${theme}`}
         />
+        {config.app?.font && (
+          <>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin="anonymous"
+            />
+            <link
+              href={`https://fonts.googleapis.com/css2?family=${config.app.font}&display=swap`}
+              rel="stylesheet"
+            />
+          </>
+        )}
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

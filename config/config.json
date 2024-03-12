@@ -4,7 +4,8 @@
     "description": "A place for all your links",
     "icon": "leaf.svg",
     "appleIconPNG": "leaf.png",
-    "defaultTheme": "Pink.css"
+    "defaultTheme": "Pink.css",
+    "font": "Outfit"
   },
   "profile": {
     "image": "user.svg",
