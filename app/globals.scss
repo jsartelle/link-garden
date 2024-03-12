@@ -1,19 +1,8 @@
-@use '@picocss/pico/scss/pico' with (
-  $enable-semantic-container: true,
-  $enable-responsive-spacings: true,
-  $breakpoints: (
-    xl: (
-      breakpoint: 1024px,
-      viewport: 950px,
-      root-font-size: 118.75%,
-    ),
-    xxl: (
-      breakpoint: 1024px,
-      viewport: 950px,
-      root-font-size: 118.75%,
-    ),
-  )
-);
+@use 'sass:meta';
+
+@layer pico {
+	@include meta.load-css('pico');
+}
 
 :root {
   --pico-font-family: var(--link-garden-font-override, ''),
