@@ -12,7 +12,7 @@ const themes = readdirSync('./public/themes/')
 export default function Home() {
   const startingTheme =
     cookies().get('linkGardenSelectedTheme')?.value ??
-    config.metadata?.defaultTheme ??
+    config.app?.defaultTheme ??
     themes[0]
 
   return (
