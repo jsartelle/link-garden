@@ -48,7 +48,7 @@ export default function RootLayout({
           id="linkGardenSelectedTheme"
           href={`/themes/${theme}`}
         />
-        {config.app?.font && (
+        {config.app?.fontOverride && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
@@ -57,7 +57,7 @@ export default function RootLayout({
               crossOrigin="anonymous"
             />
             <link
-              href={`https://fonts.googleapis.com/css2?family=${config.app.font}&display=swap`}
+              href={`https://fonts.googleapis.com/css2?family=${config.app.fontOverride}&display=swap`}
               rel="stylesheet"
             />
           </>
