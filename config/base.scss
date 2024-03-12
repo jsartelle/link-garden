@@ -21,6 +21,14 @@
   column-gap: var(--pico-spacing);
 }
 
+.link-button {
+  color: var(--pico-primary);
+}
+
+.link-button a {
+  color: inherit;
+}
+
 .link-button-image {
   flex-shrink: 0;
   align-self: center;
