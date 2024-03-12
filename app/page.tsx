@@ -7,7 +7,6 @@ import ThemeSelect from '@/app/components/ThemeSelect'
 import config from '@/config/config.json'
 import links from '@/config/links.json'
 
-
 export default function Home() {
   const themes = readdirSync('./public/themes/')
   const startingTheme =
@@ -47,14 +46,10 @@ export default function Home() {
           </LinkSection>
         ))}
       </main>
-      {themes.length > 1 && (
-        <>
-          <footer>
-            <h1>Select Theme</h1>
-            <ThemeSelect themes={themes} startingTheme={startingTheme} />
-          </footer>
-        </>
-      )}
+      <footer>
+        <h2>Select Theme</h2>
+        <ThemeSelect themes={themes} startingTheme={startingTheme} />
+      </footer>
     </>
   )
 }
