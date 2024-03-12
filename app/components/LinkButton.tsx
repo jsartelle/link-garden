@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import ExternalLink from '@/app/images/external-link.svg'
+import { ExternalLink } from 'lucide-react'
 
 export interface LinkButtonProps {
   title: string
@@ -39,13 +39,7 @@ export default function LinkButton({
         className="link-button-new-tab"
         aria-label={`Open ${title} in new tab`}
       >
-        <Image
-          className="link-button-new-tab-image"
-          src={ExternalLink}
-          alt=""
-          width={24}
-          draggable={false}
-        />
+        <ExternalLink size={24} />
       </a>
     </div>
   )
