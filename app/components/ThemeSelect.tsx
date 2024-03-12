@@ -2,7 +2,7 @@
 
 export interface ThemeSelectProps {
   themes: string[]
-  startingTheme?: string
+  pageLoadTheme?: string
 }
 
 function setTheme(theme: string) {
@@ -15,11 +15,11 @@ function setTheme(theme: string) {
 
 export default function ThemeSelect({
   themes,
-  startingTheme,
+  pageLoadTheme,
 }: ThemeSelectProps) {
   return (
     <select
-      defaultValue={startingTheme}
+      defaultValue={pageLoadTheme}
       onChange={(e) => setTheme(e.target.value)}
     >
       {themes.map((theme, index) => (

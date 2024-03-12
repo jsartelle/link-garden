@@ -1,7 +1,6 @@
-import { readdirSync } from 'fs'
 import type { Metadata } from 'next'
-import { cookies } from 'next/headers'
 import config from '@/config/config.json'
+import useThemes from '@/app/util/themes'
 import '@/config/base.scss'
 import '@/app/globals.scss'
 
@@ -34,11 +33,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const themes = readdirSync('./public/themes/')
-  const theme =
-    cookies().get('linkGardenSelectedTheme')?.value ??
-    config.app?.defaultTheme ??
-    themes[0]
+  const { pageLoadTheme } = useThemes()
 
   return (
     <html lang="en" style={rootStyle}>
@@ -46,7 +41,7 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           id="linkGardenSelectedTheme"
-          href={`/themes/${theme}`}
+          href={`/themes/${pageLoadTheme}`}
         />
         {config.app?.fontOverride && (
           <>

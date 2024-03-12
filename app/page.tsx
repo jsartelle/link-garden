@@ -1,18 +1,13 @@
-import { readdirSync } from 'fs'
-import { cookies } from 'next/headers'
 import Image from 'next/image'
 import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
 import ThemeSelect from '@/app/components/ThemeSelect'
 import config from '@/config/config.json'
 import links from '@/config/links.json'
+import useThemes from '@/app/util/themes'
 
 export default function Home() {
-  const themes = readdirSync('./public/themes/')
-  const startingTheme =
-    cookies().get('linkGardenSelectedTheme')?.value ??
-    config.app?.defaultTheme ??
-    themes[0]
+  const { themes, pageLoadTheme } = useThemes()
 
   return (
     <>
@@ -48,7 +43,7 @@ export default function Home() {
       </main>
       <footer>
         <h2>Select Theme</h2>
-        <ThemeSelect themes={themes} startingTheme={startingTheme} />
+        <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
       </footer>
     </>
   )
