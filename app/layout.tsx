@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 }
 
 const rootStyle: any = {
-  '--link-garden-font': config.app?.font,
+  '--link-garden-font-override': config.app?.fontOverride,
 }
 
 export default function RootLayout({
