@@ -30,11 +30,6 @@
           "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme to use on first launch.",
           "type": "string"
         },
-        "devTheme": {
-          "description": "File name (with extension) of a CSS theme in config/themes.\n\nThe theme listed here will live reload. This will disable other themes. ONLY HAS AN EFFECT IN DEVELOPMENT!",
-          "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme listed here will live reload. This will disable other themes. **Only has an effect in development!**",
-          "type": "string"
-        },
         "fontOverride": {
           "description": "The name of a Google Font. Leave blank to use the system font.",
           "type": "string"

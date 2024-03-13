@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import config from '@/config/config.json'
 import useThemes from '@/app/util/themes'
-import '@/config/base.scss'
 import '@/app/globals.scss'
 
 const icon = require(`@/config/images/${
@@ -33,23 +32,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { devTheme, pageLoadTheme } = useThemes()
-
-  // allows live reload during theme development
-  if (devTheme) {
-    require(`@/public/themes/${config.app?.devTheme}`)
-  }
+  const { pageLoadTheme } = useThemes()
 
   return (
     <html lang="en" style={rootStyle}>
       <head>
-        {!devTheme && (
-          <link
-            rel="stylesheet"
-            id="linkGardenSelectedTheme"
-            href={`/themes/${pageLoadTheme}`}
-          />
-        )}
+        <link
+          rel="stylesheet"
+          id="linkGardenSelectedTheme"
+          href={`/themes/${pageLoadTheme}`}
+        />
         {config.app?.fontOverride && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
