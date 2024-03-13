@@ -17,9 +17,19 @@
   body {
     width: 100%;
     height: 100%;
+    padding-block-start: var(--pico-block-spacing-vertical);
+  }
+
+  body,
+  header,
+  main,
+  footer {
+    display: flex;
+    flex-direction: column;
   }
 
   .profile {
+    align-items: center;
     text-align: center;
   }
 
@@ -27,8 +37,13 @@
     margin-block-end: var(--pico-spacing);
   }
 
+  .link-section {
+    display: flex;
+    flex-direction: column;
+  }
+
   .link-section + .link-section {
-    margin-top: calc(var(--pico-block-spacing-vertical) * 2);
+    margin-top: var(--pico-block-spacing-vertical);
   }
 
   .link-section-links {
