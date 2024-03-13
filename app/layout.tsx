@@ -35,6 +35,11 @@ export default function RootLayout({
 }>) {
   const { pageLoadTheme } = useThemes()
 
+  // allows live reload during theme development
+  if (config.app?.devTheme) {
+    require(`@/public/themes/${config.app?.devTheme}`)
+  }
+
   return (
     <html lang="en" style={rootStyle}>
       <head>
