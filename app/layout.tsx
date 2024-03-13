@@ -33,21 +33,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { pageLoadTheme } = useThemes()
+  const { devTheme, pageLoadTheme } = useThemes()
 
   // allows live reload during theme development
-  if (process.env.NODE_ENV === 'development' && config.app?.devTheme) {
+  if (devTheme) {
     require(`@/public/themes/${config.app?.devTheme}`)
   }
 
   return (
     <html lang="en" style={rootStyle}>
       <head>
-        <link
-          rel="stylesheet"
-          id="linkGardenSelectedTheme"
-          href={`/themes/${pageLoadTheme}`}
-        />
+        {!devTheme && (
+          <link
+            rel="stylesheet"
+            id="linkGardenSelectedTheme"
+            href={`/themes/${pageLoadTheme}`}
+          />
+        )}
         {config.app?.fontOverride && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -7,7 +7,7 @@ import links from '@/config/links.json'
 import useThemes from '@/app/util/themes'
 
 export default function Home() {
-  const { themes, pageLoadTheme } = useThemes()
+  const { themes, pageLoadTheme, devTheme } = useThemes()
 
   return (
     <>
@@ -41,10 +41,19 @@ export default function Home() {
           </LinkSection>
         ))}
       </main>
-      <footer>
-        <h2>Select Theme</h2>
-        <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
-      </footer>
+      {devTheme ? (
+        <footer>
+          <p style={{ textAlign: 'center' }}>
+            Theme switching is disabled because the <var>devTheme</var> key is
+            set in <var>config.json</var>.
+          </p>
+        </footer>
+      ) : (
+        <footer>
+          <h2>Select Theme</h2>
+          <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
+        </footer>
+      )}
     </>
   )
 }

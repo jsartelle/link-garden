@@ -31,8 +31,8 @@
           "type": "string"
         },
         "devTheme": {
-          "description": "File name (with extension) of a CSS theme in config/themes.\n\nThe theme listed here will be applied on each load and will live reload. ONLY HAS AN EFFECT IN DEVELOPMENT.",
-          "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme listed here will be applied on each load and will live reload. **Only has an effect in development.**",
+          "description": "File name (with extension) of a CSS theme in config/themes.\n\nThe theme listed here will live reload. This will disable other themes. ONLY HAS AN EFFECT IN DEVELOPMENT!",
+          "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme listed here will live reload. This will disable other themes. **Only has an effect in development!**",
           "type": "string"
         },
         "fontOverride": {
