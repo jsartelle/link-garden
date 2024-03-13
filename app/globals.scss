@@ -3,7 +3,7 @@
 @layer pico, base;
 
 @layer pico {
-	@include meta.load-css('pico');
+  @include meta.load-css('pico');
 }
 
 @layer base {
@@ -24,7 +24,7 @@
   }
 
   .profile-image {
-    margin-bottom: var(--pico-typography-spacing-vertical);
+    margin-block-end: var(--pico-typography-spacing-vertical);
   }
 
   .link-section-links {
@@ -33,16 +33,15 @@
     row-gap: var(--pico-spacing);
   }
 
-  .link-button,
+  .link-button {
+    display: flex;
+    container: link-button / inline-size;
+  }
+
   .link-button-link {
     display: flex;
     text-decoration: none;
-    -moz-column-gap: var(--pico-spacing);
     column-gap: var(--pico-spacing);
-  }
-
-  .link-button {
-    color: var(--pico-primary);
   }
 
   .link-button a {
@@ -52,12 +51,19 @@
   .link-button-image {
     flex-shrink: 0;
     align-self: center;
+    max-width: 64px;
+    width: 10cqw;
     height: auto;
   }
 
+  .link-button-title {
+    display: inline-block;
+  }
+
   .link-button-new-tab {
+    display: flex;
     flex-shrink: 0;
-    align-self: center;
-    padding-inline: 24px;
+    align-items: center;
+    padding-inline-start: var(--pico-spacing);
   }
 }
