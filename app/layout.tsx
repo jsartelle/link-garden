@@ -37,11 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en" style={rootStyle}>
       <head>
-        <link
-          rel="stylesheet"
-          id="linkGardenSelectedTheme"
-          href={`/themes/${pageLoadTheme}`}
-        />
+        {process.env.NODE_ENV !== 'development' && (
+          <link
+            rel="stylesheet"
+            id="linkGardenSelectedTheme"
+            href={`/themes/${pageLoadTheme}`}
+          />
+        )}
         {config.app?.fontOverride && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />

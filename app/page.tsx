@@ -44,6 +44,12 @@ export default function Home() {
       <footer>
         <h2>Select Theme</h2>
         <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
+        {process.env.NODE_ENV === 'development' && (
+          <b>
+            Theme switching is disabled in development mode. Edit{' '}
+            <var>themes.js</var> to enable live reload for theme development.
+          </b>
+        )}
       </footer>
     </>
   )

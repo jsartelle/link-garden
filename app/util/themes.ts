@@ -2,8 +2,10 @@ import { readdirSync } from 'fs'
 import { cookies } from 'next/headers'
 import config from '@/config/config.json'
 
-// NOTE: uncomment this to live reload a theme (theme name must be hard-coded or all themes will be loaded at once)
-// require(`@/public/themes/Default.css`)
+// NOTE: edit this to live reload a theme during development
+if (process.env.NODE_ENV === 'development') {
+  require(`@/public/themes/Default.css`)
+}
 
 export default function useThemes() {
   const themes = readdirSync('./public/themes')
