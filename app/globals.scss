@@ -24,7 +24,11 @@
   }
 
   .profile-image {
-    margin-block-end: var(--pico-typography-spacing-vertical);
+    margin-block-end: var(--pico-spacing);
+  }
+
+  .link-section + .link-section {
+    margin-top: calc(var(--pico-block-spacing-vertical) * 2);
   }
 
   .link-section-links {

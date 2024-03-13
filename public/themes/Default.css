@@ -1,0 +1,26 @@
+.profile-image {
+  border-radius: 50%;
+}
+
+.profile-description {
+  opacity: 0.8;
+}
+
+.link-button {
+  margin-bottom: var(--pico-block-spacing-vertical);
+  padding: var(--pico-block-spacing-vertical)
+    var(--pico-block-spacing-horizontal);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  box-shadow: var(--pico-card-box-shadow);
+  color: var(--pico-primary);
+}
+
+.link-button-description,
+.link-button-new-tab {
+  opacity: 0.8;
+
+  .link-button:hover & {
+    opacity: 1;
+  }
+}

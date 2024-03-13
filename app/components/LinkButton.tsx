@@ -27,7 +27,7 @@ export default function LinkButton({
           />
         )}
         <div>
-          <div className="link-button-title">{title}</div>
+          <b className="link-button-title">{title}</b>
           {description && (
             <div className="link-button-description">{description}</div>
           )}
