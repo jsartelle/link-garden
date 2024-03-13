@@ -1,4 +1,5 @@
 {
+  "$schema": "../config.schema.json",
   "app": {
     "title": "Link Garden",
     "description": "A place for all your links",

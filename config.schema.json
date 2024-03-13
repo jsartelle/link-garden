@@ -1,0 +1,64 @@
+{
+  "title": "config",
+  "description": "Configuration object",
+  "type": "object",
+  "properties": {
+    "app": {
+      "description": "App configuration",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "The page title.",
+          "type": "string"
+        },
+        "description": {
+          "description": "A short description used for social media.",
+          "type": "string"
+        },
+        "icon": {
+          "description": "File name (with extension) of an image in config/images.\n\nImage used for the favicon. SVG preferred.",
+          "markdownDescription": "File name (with extension) of an image in `config/images`.\n\nImage used for the favicon. SVG preferred.",
+          "type": "string"
+        },
+        "appleIconPNG": {
+          "description": "File name (with extension) of an image in config/images.\n\n180x180 PNG used for the home screen on Apple devices.",
+          "markdownDescription": "File name (with extension) of an image in `config/images`.\n\n180x180 PNG used for the home screen on Apple devices.",
+          "type": "string"
+        },
+        "defaultTheme": {
+          "description": "File name (with extension) of a CSS theme in config/themes.\n\nThe theme to use on first launch.",
+          "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme to use on first launch.",
+          "type": "string"
+        },
+        "devTheme": {
+          "description": "File name (with extension) of a CSS theme in config/themes.\n\nThe theme listed here will be applied on each load and will live reload. ONLY HAS AN EFFECT IN DEVELOPMENT.",
+          "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme listed here will be applied on each load and will live reload. **Only has an effect in development.**",
+          "type": "string"
+        },
+        "fontOverride": {
+          "description": "The name of a Google Font. Leave blank to use the system font.",
+          "type": "string"
+        }
+      }
+    },
+    "profile": {
+      "description": "Config for the top profile section",
+      "type": "object",
+      "properties": {
+        "image": {
+          "description": "File name (with extension) of an image in config/images.\n\nProfile picture to display above the links.",
+          "markdownDescription": "File name (with extension) of an image in `config/images`.\n\nProfile picture to display above the links.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Name or heading to display above the links.",
+          "type": "string"
+        },
+        "description": {
+          "description": "A short description to display above the links.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

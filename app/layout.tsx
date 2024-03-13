@@ -36,7 +36,7 @@ export default function RootLayout({
   const { pageLoadTheme } = useThemes()
 
   // allows live reload during theme development
-  if (config.app?.devTheme) {
+  if (process.env.NODE_ENV === 'development' && config.app?.devTheme) {
     require(`@/public/themes/${config.app?.devTheme}`)
   }
 
