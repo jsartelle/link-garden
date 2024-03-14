@@ -19,6 +19,7 @@ export default function ThemeSelect({
 }: ThemeSelectProps) {
   return (
     <select
+      className="theme-select"
       defaultValue={pageLoadTheme}
       onChange={(e) => setTheme(e.target.value)}
     >

@@ -43,10 +43,10 @@ export default function Home() {
       </main>
       {themes.length > 1 && (
         <footer>
-          <h2>Select Theme</h2>
+          <h2 className="theme-select-header">Select Theme</h2>
           <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
           {process.env.NODE_ENV === 'development' && (
-            <b>
+            <b className="theme-select-dev-warning">
               Theme switching is disabled in development mode. Edit{' '}
               <var>themes.js</var> to live reload your theme during development.
             </b>
