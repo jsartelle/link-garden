@@ -42,7 +42,12 @@ export default function Home() {
       </main>
       {themes.length > 1 && (
         <footer>
-          <h2 className="theme-select-header">Select Theme</h2>
+          <h2
+            id="link-garden-theme-select-header"
+            className="theme-select-header"
+          >
+            Select Theme
+          </h2>
           <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
           {process.env.NODE_ENV === 'development' && (
             <b className="theme-select-dev-warning">

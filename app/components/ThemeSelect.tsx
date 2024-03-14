@@ -20,6 +20,7 @@ export default function ThemeSelect({
   return (
     <select
       className="theme-select"
+      aria-labelledby="link-garden-theme-select-header"
       defaultValue={pageLoadTheme}
       onChange={(e) => setTheme(e.target.value)}
     >
