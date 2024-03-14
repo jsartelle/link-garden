@@ -113,6 +113,7 @@ footer {
 }
 
 .link-button-link {
+  align-items: center;
   padding: var(--v-pro-padding);
   padding-right: calc(var(--v-pro-padding) * 2 + var(--pico-spacing) * 2);
   border-radius: inherit;
