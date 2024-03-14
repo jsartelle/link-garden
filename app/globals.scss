@@ -34,7 +34,10 @@
   }
 
   .profile-image {
+    width: 128px;
+    height: 128px;
     margin-block-end: var(--pico-spacing);
+    object-fit: cover;
   }
 
   .link-section {
