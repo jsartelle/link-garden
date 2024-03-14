@@ -10,6 +10,19 @@ const appleIcon = require(`@/config/images/${
   config.app?.appleIconPNG ?? 'leaf.png'
 }`).default
 
+const bgImageLight =
+  config.themeOverrides?.backgroundImageLight &&
+  `url('${
+    require(`@/config/images/${config.themeOverrides.backgroundImageLight}`)
+      .default.src
+  }')`
+const bgImageDark =
+  config.themeOverrides?.backgroundImageDark &&
+  `url('${
+    require(`@/config/images/${config.themeOverrides.backgroundImageDark}`)
+      .default.src
+  }')`
+
 export const metadata: Metadata = {
   title: config.app?.title ?? 'Link Garden',
   description: config.app?.description ?? 'A place for all your links',
@@ -25,6 +38,10 @@ export const metadata: Metadata = {
 
 const rootStyle: any = {
   '--link-garden-google-font': config.themeOverrides?.googleFont,
+  '--link-garden-bg-color-light': config.themeOverrides?.backgroundColorLight,
+  '--link-garden-bg-color-dark': config.themeOverrides?.backgroundColorDark,
+  '--link-garden-bg-image-light': bgImageLight,
+  '--link-garden-bg-image-dark': bgImageDark,
 }
 
 export default function RootLayout({

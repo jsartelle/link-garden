@@ -32,15 +32,15 @@
       }
     },
     "themeOverrides": {
-      "description": "",
+      "description": "Settings which override styles from the current theme",
       "type": "object",
       "properties": {
         "backgroundColorLight": {
-          "description": "CSS background color for light mode. Leave blank to use the color defined in your theme",
+          "description": "CSS color value for the background in light mode.\n\nLeave blank to use the color defined in your theme.",
           "type": "string"
         },
         "backgroundColorDark": {
-          "description": "CSS background color for dark mode. Leave blank to use the color defined in your theme",
+          "description": "CSS color value for the background in dark mode.\n\nLeave blank to use the color defined in your theme.",
           "type": "string"
         },
         "backgroundImageLight": {

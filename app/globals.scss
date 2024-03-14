@@ -17,7 +17,19 @@
   body {
     width: 100%;
     height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-block: var(--pico-block-spacing-vertical);
+
+    @media (prefers-color-scheme: light) {
+      background-color: var(--link-garden-bg-color-light);
+      background-image: var(--link-garden-bg-image-light);
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--link-garden-bg-color-dark);
+      background-image: var(--link-garden-bg-image-dark);
+    }
   }
 
   body,

@@ -48,10 +48,19 @@
 }
 
 body {
-  background: url('https://source.unsplash.com/random');
   background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+
+  /* load random background if not set by user */
+  @media (prefers-color-scheme: light) {
+    :root:not([style*='--link-garden-bg-image-light']) & {
+      background-image: url('https://source.unsplash.com/random');
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([style*='--link-garden-bg-image-dark']) & {
+      background-image: url('https://source.unsplash.com/random');
+    }
+  }
 }
 
 .profile,
