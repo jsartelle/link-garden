@@ -72,6 +72,7 @@
 
   .link-button-link {
     display: flex;
+    flex-grow: 1;
     text-decoration: none;
     column-gap: var(--pico-spacing);
   }
