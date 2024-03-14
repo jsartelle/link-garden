@@ -1,0 +1,179 @@
+:root {
+  --pico-color: white;
+  --pico-form-element-color: white;
+  --pico-h1-color: white;
+  --pico-h2-color: white;
+  --pico-h3-color: white;
+  --pico-h4-color: white;
+  --pico-h5-color: white;
+  --pico-h6-color: white;
+  --pico-primary: white;
+
+  --pico-icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  --v-pro-padding: calc(var(--pico-spacing) * 2);
+  --v-pro-background: linear-gradient(
+    to top,
+    rgba(128, 128, 128, 0.5),
+    rgba(128, 128, 128, 0.5)
+  );
+  --v-pro-background-nested-light: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)
+  );
+  --v-pro-background-nested-dark: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  );
+  --v-pro-focus-highlight: radial-gradient(
+    farthest-corner at center,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  --v-pro-blur: blur(50px) saturate(200%);
+  --v-pro-outline: 2px solid rgba(255, 255, 255, 0.1);
+  --v-pro-radius: 30px;
+}
+
+* {
+  outline-offset: -2px;
+}
+
+:focus,
+:focus-visible {
+  /* disables the Pico focus ring */
+  box-shadow: none;
+}
+
+body {
+  background: url('https://source.unsplash.com/random');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile,
+footer {
+  position: relative;
+  align-self: center;
+  padding: var(--v-pro-padding);
+  width: fit-content;
+  outline: var(--v-pro-outline);
+  border-radius: var(--v-pro-radius);
+  background: var(--v-pro-background);
+  margin-inline: var(--pico-block-spacing-horizontal);
+  backdrop-filter: var(--v-pro-blur);
+}
+
+.profile {
+  align-items: center;
+  margin-block-start: 96px;
+}
+
+.profile-image {
+  position: absolute;
+  bottom: 100%;
+  border: var(--v-pro-outline);
+  border-radius: 50%;
+  translate: 0 40%;
+}
+
+.profile-description {
+  margin-bottom: 0;
+}
+
+.link-section-title {
+  align-self: center;
+  outline: var(--v-pro-outline);
+  border-radius: var(--v-pro-radius);
+  background: var(--v-pro-background);
+  backdrop-filter: var(--v-pro-blur);
+  padding-inline: var(--v-pro-padding);
+  padding-block: calc(var(--pico-spacing) / 2);
+}
+
+.link-button {
+  outline: var(--v-pro-outline);
+  border-radius: var(--v-pro-radius);
+  background: var(--v-pro-background);
+  transition: scale var(--pico-transition);
+  backdrop-filter: var(--v-pro-blur);
+
+  &:hover,
+  &:has(.link-button-link:focus) {
+    background: var(--v-pro-background), var(--v-pro-focus-highlight);
+    scale: 1.025;
+
+    &:active {
+      scale: 1;
+    }
+  }
+}
+
+.link-button-link {
+  padding: var(--v-pro-padding);
+  padding-right: calc(var(--v-pro-padding) * 2 + var(--pico-spacing) * 2);
+  border-radius: inherit;
+}
+
+.link-button-new-tab {
+  position: absolute;
+  right: var(--pico-spacing);
+  align-self: center;
+  border-radius: var(--v-pro-radius);
+  background: var(--v-pro-background-nested-light);
+  transition: scale var(--pico-transition);
+  padding-block: calc(var(--pico-spacing) / 2);
+  padding-inline: var(--pico-spacing);
+
+  &:hover,
+  &:focus {
+    background: var(--v-pro-background-nested-light),
+      var(--v-pro-focus-highlight);
+    scale: 1.075;
+
+    &:active {
+      scale: 1;
+    }
+  }
+}
+
+footer {
+  padding-block: var(--pico-spacing);
+}
+
+select {
+  --v-pro-focus-highlight: radial-gradient(
+    farthest-corner at center,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  margin-bottom: 0;
+  border: none;
+  border-radius: var(--v-pro-radius);
+  background: var(--pico-icon-chevron-white),
+    var(--v-pro-background-nested-dark);
+  background-position: center right 0.75rem, center;
+  background-repeat: no-repeat;
+  transition: scale var(--pico-transition);
+
+  &:hover,
+  &:focus {
+    background: var(--pico-icon-chevron-white),
+      var(--v-pro-background-nested-dark), var(--v-pro-focus-highlight);
+    background-position: center right 0.75rem, center, center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    scale: 1.025;
+
+    &:active {
+      scale: 1;
+    }
+  }
+}
+
+.theme-select-dev-warning {
+  display: none;
+}
