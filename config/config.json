@@ -18,5 +18,34 @@
     "image": "user.svg",
     "title": "Your Name Here",
     "description": "Write a little bit about yourself here. Maybe add some ✨emoji✨"
-  }
+  },
+  "links": [
+    {
+      "title": "Social",
+      "content": [
+        {
+          "title": "Bluesky",
+          "href": "https://bsky.app/",
+          "description": "Bluesky is social media as it should be. Find your community among millions of users, unleash your creativity, and have some fun again.",
+          "image": "bluesky.svg"
+        },
+        {
+          "title": "Mastodon",
+          "href": "https://joinmastodon.org/",
+          "description": "Your home feed should be filled with what matters to you most, not what a corporation thinks you should see. Radically different social media, back in the hands of the people.",
+          "image": "mastodon.svg"
+        }
+      ]
+    },
+    {
+      "title": "Coding",
+      "content": [
+        {
+          "title": "Next.js",
+          "href": "https://nextjs.org/",
+          "description": "Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components."
+        }
+      ]
+    }
+  ]
 }

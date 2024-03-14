@@ -80,8 +80,11 @@ footer {
 
 .profile {
   align-items: center;
-  -webkit-margin-before: 96px;
-  margin-block-start: 96px;
+
+  &:has(.profile-image) {
+    -webkit-margin-before: 96px;
+    margin-block-start: 96px;
+  }
 }
 
 .profile-image {

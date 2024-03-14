@@ -3,7 +3,6 @@ import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
 import ThemeSelect from '@/app/components/ThemeSelect'
 import config from '@/config/config.json'
-import links from '@/config/links.json'
 import useThemes from '@/app/util/themes'
 
 export default function Home() {
@@ -33,7 +32,7 @@ export default function Home() {
         </header>
       )}
       <main>
-        {links.map(({ title, content }, index) => (
+        {config.links.map(({ title, content }, index) => (
           <LinkSection key={index} title={title}>
             {content.map((link, index) => (
               <LinkButton key={index} {...link} />
