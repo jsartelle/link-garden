@@ -36,6 +36,7 @@
   .profile-image {
     width: 128px;
     height: 128px;
+    -webkit-margin-after: var(--pico-spacing);
     margin-block-end: var(--pico-spacing);
     object-fit: cover;
   }
@@ -83,6 +84,7 @@
     display: flex;
     flex-shrink: 0;
     align-items: center;
+    -webkit-padding-start: var(--pico-spacing);
     padding-inline-start: var(--pico-spacing);
   }
 }
