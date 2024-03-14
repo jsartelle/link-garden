@@ -5,7 +5,13 @@
     "description": "A place for all your links",
     "icon": "leaf.svg",
     "appleIconPNG": "leaf.png",
-    "defaultTheme": "Default.css",
+    "defaultTheme": "Default.css"
+  },
+  "themeOverrides": {
+    "backgroundColorLight": "",
+    "backgroundColorDark": "",
+    "backgroundImageLight": "",
+    "backgroundImageDark": "",
     "googleFont": ""
   },
   "profile": {
