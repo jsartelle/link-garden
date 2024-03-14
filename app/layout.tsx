@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 const rootStyle: any = {
-  '--link-garden-font-override': config.app?.fontOverride,
+  '--link-garden-google-font': config.app?.googleFont,
 }
 
 export default function RootLayout({
@@ -44,7 +44,7 @@ export default function RootLayout({
             href={`/themes/${pageLoadTheme}`}
           />
         )}
-        {config.app?.fontOverride && (
+        {config.app?.googleFont && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
@@ -53,7 +53,7 @@ export default function RootLayout({
               crossOrigin="anonymous"
             />
             <link
-              href={`https://fonts.googleapis.com/css2?family=${config.app.fontOverride}&display=swap`}
+              href={`https://fonts.googleapis.com/css2?family=${config.app.googleFont}&display=swap`}
               rel="stylesheet"
             />
           </>

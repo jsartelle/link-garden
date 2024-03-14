@@ -6,7 +6,7 @@
     "icon": "leaf.svg",
     "appleIconPNG": "leaf.png",
     "defaultTheme": "Default.css",
-    "fontOverride": ""
+    "googleFont": "Outfit"
   },
   "profile": {
     "image": "user.svg",

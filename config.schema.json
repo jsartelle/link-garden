@@ -30,8 +30,8 @@
           "markdownDescription": "File name (with extension) of a CSS theme in `config/themes`.\n\nThe theme to use on first launch.",
           "type": "string"
         },
-        "fontOverride": {
-          "description": "The name of a Google Font. Leave blank to use the system font.",
+        "googleFont": {
+          "description": "The name of a Google Font. Leave blank to use the system font or the font defined in your theme.",
           "type": "string"
         }
       }
