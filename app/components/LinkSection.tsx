@@ -3,7 +3,7 @@ export interface LinkSectionProps {
   children: React.ReactNode
 }
 
-export default function LinkButton({ title, children }: LinkSectionProps) {
+export default function LinkSection({ title, children }: LinkSectionProps) {
   return (
     <section className="link-section">
       {title && <h2 className="link-section-title">{title}</h2>}
