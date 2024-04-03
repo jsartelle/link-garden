@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import HoverCoordinates from '@/app/components/HoverCoordinates'
 import LinkButton from '@/app/components/LinkButton'
 import LinkSection from '@/app/components/LinkSection'
 import ThemeSelect from '@/app/components/ThemeSelect'
@@ -35,7 +36,9 @@ export default function Home() {
         {config.links.map(({ title, content }, index) => (
           <LinkSection key={index} title={title}>
             {content.map((link, index) => (
-              <LinkButton key={index} {...link} />
+              <HoverCoordinates key={index}>
+                <LinkButton {...link} />
+              </HoverCoordinates>
             ))}
           </LinkSection>
         ))}
@@ -48,7 +51,9 @@ export default function Home() {
           >
             Select Theme
           </h2>
+          <HoverCoordinates>
           <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
+          </HoverCoordinates>
           {process.env.NODE_ENV === 'development' && (
             <b className="theme-select-dev-warning">
               Theme switching is disabled in development mode. Edit{' '}

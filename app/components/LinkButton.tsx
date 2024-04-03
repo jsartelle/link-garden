@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { ExternalLink } from 'lucide-react'
+import HoverCoordinates from '@/app/components/HoverCoordinates'
 
 export interface LinkButtonProps {
   title: string
@@ -33,14 +34,16 @@ export default function LinkButton({
           )}
         </div>
       </a>
-      <a
-        href={href}
-        target="_blank"
-        className="link-button-new-tab"
-        aria-label={`Open ${title} in new tab`}
-      >
-        <ExternalLink size={24} />
-      </a>
+      <HoverCoordinates>
+        <a
+          href={href}
+          target="_blank"
+          className="link-button-new-tab"
+          aria-label={`Open ${title} in new tab`}
+        >
+          <ExternalLink size={24} />
+        </a>
+      </HoverCoordinates>
     </div>
   )
 }

@@ -7,6 +7,10 @@
 }
 
 @layer base {
+  @keyframes focus-within {
+  }
+  @keyframes blur-within {
+  }
   :root {
     --pico-font-family: var(--link-garden-google-font, ''),
       var(--link-garden-theme-font, ''), system-ui, 'Segoe UI', Roboto, Oxygen,
@@ -38,6 +42,14 @@
   footer {
     display: flex;
     flex-direction: column;
+  }
+
+  .hover-coordinates-wrapper {
+    // Fires a dummy animation whenever an element inside the wrapper is focused or blurred. This lets us listen to the animationstart event and clear the hover coordinates on focus change.
+    animation: blur-within 0s;
+    &:focus-within {
+      animation: focus-within 0s;
+    }
   }
 
   .profile {
