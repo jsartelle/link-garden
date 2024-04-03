@@ -4,7 +4,7 @@ import config from '@/config/config.json'
 
 // NOTE: edit this to live reload a theme during development
 if (process.env.NODE_ENV === 'development') {
-  require(`@/public/themes/Default.css`)
+  require(`@/public/themes/Spatial.css`)
 }
 
 export default function useThemes() {
