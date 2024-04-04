@@ -16,10 +16,6 @@
   color: var(--pico-primary);
 }
 
-.link-button > .hover-coordinates-wrapper {
-  display: flex;
-}
-
 .link-button-description,
 .link-button-new-tab {
   opacity: 0.8;
