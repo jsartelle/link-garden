@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import config from '@/config/config.json'
 import useThemes from '@/app/util/themes'
 import '@/app/globals.scss'
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
       url: appleIcon.src,
     },
   },
+}
+
+export const viewport: Viewport = {
+  viewportFit: 'cover'
 }
 
 const rootStyle: any = {

@@ -36,10 +36,7 @@
   box-shadow: none;
 }
 
-body {
-  /* FIXME fix mobile - put background on root? */
-  background-attachment: fixed;
-
+body::before {
   /* load random background if not set by user */
   @media (prefers-color-scheme: light) {
     :root:not([style*='--link-garden-bg-image-light']) & {
