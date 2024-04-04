@@ -17,17 +17,13 @@
   --v-pro-background-nested-light: rgba(255, 255, 255, 0.2);
   --v-pro-background-nested-dark: rgba(0, 0, 0, 0.2);
   --v-pro-blur: blur(50px) saturate(200%);
-  --v-pro-outline: 2px solid rgba(255, 255, 255, 0.1);
+  --v-pro-outline: solid rgba(255, 255, 255, 0.1);
   --v-pro-radius: 30px;
 
   @media (prefers-reduced-transparency: reduce) {
     --v-pro-background: rgba(64, 64, 64);
     --v-pro-background-active: rgba(128, 128, 128, 1);
   }
-}
-
-* {
-  outline-offset: -2px;
 }
 
 :focus,
@@ -88,7 +84,8 @@ footer {
   padding: var(--v-pro-padding);
   width: -webkit-fit-content;
   width: fit-content;
-  outline: var(--v-pro-outline);
+  outline: 2px var(--v-pro-outline);
+  outline-offset: -2px;
   border-radius: var(--v-pro-radius);
   background-color: var(--v-pro-background);
   margin-inline: var(--pico-block-spacing-horizontal);
@@ -108,7 +105,7 @@ footer {
 .profile-image {
   position: absolute;
   bottom: 100%;
-  border: var(--v-pro-outline);
+  border: 2px var(--v-pro-outline);
   border-radius: 50%;
   translate: 0 40%;
 }
@@ -119,7 +116,8 @@ footer {
 
 .link-section-title {
   align-self: center;
-  outline: var(--v-pro-outline);
+  outline: 2px var(--v-pro-outline);
+  outline-offset: -2px;
   border-radius: var(--v-pro-radius);
   background-color: var(--v-pro-background);
   -webkit-backdrop-filter: var(--v-pro-blur);
@@ -129,7 +127,8 @@ footer {
 }
 
 .link-button {
-  outline: var(--v-pro-outline);
+  outline: 2px var(--v-pro-outline);
+  outline-offset: -2px;
   border-radius: var(--v-pro-radius);
   background-color: var(--v-pro-background);
   transition: background-color var(--pico-transition);
@@ -155,6 +154,8 @@ footer {
   position: absolute;
   right: var(--pico-spacing);
   align-self: center;
+  outline: 1px var(--v-pro-outline);
+  outline-offset: -1px;
 }
 
 .link-button-new-tab {
