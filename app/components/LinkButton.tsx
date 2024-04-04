@@ -34,7 +34,7 @@ export default function LinkButton({
           )}
         </div>
       </a>
-      <HoverCoordinates>
+      <HoverCoordinates className="link-button-new-tab-wrapper">
         <a
           href={href}
           target="_blank"

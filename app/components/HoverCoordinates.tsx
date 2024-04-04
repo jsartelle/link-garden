@@ -9,8 +9,15 @@ import {
   type CSSProperties,
 } from 'react'
 
+interface HoverCoordinatesProps {
+  className?: string
+}
+
 /** NOTE: doesn't currently handle element resizing */
-export default function HoverCoordinates({ children }: PropsWithChildren) {
+export default function HoverCoordinates({
+  className = '',
+  children,
+}: PropsWithChildren<HoverCoordinatesProps>) {
   const wrapper = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState<number | null>(null)
   const [width, setWidth] = useState<number | null>(null)
@@ -31,9 +38,7 @@ export default function HoverCoordinates({ children }: PropsWithChildren) {
 
   const updateCoords = (e: any) => {
     // TODO fix typing
-    setX(
-      (e.touches?.[0].clientX ?? e.clientX) + window.scrollX - left!
-    )
+    setX((e.touches?.[0].clientX ?? e.clientX) + window.scrollX - left!)
     setY((e.touches?.[0].clientY ?? e.clientY) + window.scrollY - top!)
   }
 
@@ -50,10 +55,12 @@ export default function HoverCoordinates({ children }: PropsWithChildren) {
     '--mouseY': y && y + 'px',
   } as CSSProperties
 
+  const classes = `hover-coordinates-wrapper ${className}`.trim()
+
   return (
     <div
       ref={wrapper}
-      className="hover-coordinates-wrapper"
+      className={classes}
       style={style}
       onMouseMove={updateCoords}
       onTouchMove={updateCoords}

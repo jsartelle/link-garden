@@ -36,7 +36,7 @@ export default function Home() {
         {config.links.map(({ title, content }, index) => (
           <LinkSection key={index} title={title}>
             {content.map((link, index) => (
-              <HoverCoordinates key={index}>
+              <HoverCoordinates className="link-button-wrapper" key={index}>
                 <LinkButton {...link} />
               </HoverCoordinates>
             ))}
@@ -51,8 +51,8 @@ export default function Home() {
           >
             Select Theme
           </h2>
-          <HoverCoordinates>
-          <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
+          <HoverCoordinates className="theme-select-wrapper">
+            <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
           </HoverCoordinates>
           {process.env.NODE_ENV === 'development' && (
             <b className="theme-select-dev-warning">

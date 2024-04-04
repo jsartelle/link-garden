@@ -152,7 +152,7 @@ footer {
   border-radius: inherit;
 }
 
-.hover-coordinates-wrapper:has(> .link-button-new-tab) {
+.link-button-new-tab-wrapper {
   --hover-scale: 1.1;
   position: absolute;
   right: var(--pico-spacing);
