@@ -135,4 +135,17 @@
     -webkit-padding-start: var(--pico-spacing);
     padding-inline-start: var(--pico-spacing);
   }
+
+  .theme-select-header {
+    &[data-tooltip] {
+      text-decoration: line-through;
+
+      &::before {
+        max-width: 90vw;
+        width: -webkit-max-content;
+        width: max-content;
+        white-space: pre-wrap;
+      }
+    }
+  }
 }

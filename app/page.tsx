@@ -9,6 +9,8 @@ import useThemes from '@/app/util/themes'
 export default function Home() {
   const { themes, pageLoadTheme } = useThemes()
 
+  const dev = process.env.NODE_ENV === 'development'
+
   return (
     <>
       {/* TODO markdown support for profile & links */}
@@ -48,18 +50,17 @@ export default function Home() {
           <h2
             id="link-garden-theme-select-header"
             className="theme-select-header"
+            data-tooltip={
+              dev
+                ? 'Theme switching is disabled in development mode.\n\nEdit themes.js to live reload your theme during development.'
+                : null
+            }
           >
             Select Theme
           </h2>
           <HoverCoordinates className="theme-select-wrapper">
             <ThemeSelect themes={themes} pageLoadTheme={pageLoadTheme} />
           </HoverCoordinates>
-          {process.env.NODE_ENV === 'development' && (
-            <b className="theme-select-dev-warning">
-              Theme switching is disabled in development mode. Edit{' '}
-              <var>themes.js</var> to live reload your theme during development.
-            </b>
-          )}
         </footer>
       )}
     </>
