@@ -29,12 +29,12 @@ export default function HoverCoordinates({ children }: PropsWithChildren) {
     setTop(rect.top + window.scrollY)
   }, [wrapper])
 
-  const updateCoords = (e: MouseEvent | TouchEvent) => {
+  const updateCoords = (e: any) => {
     // TODO fix typing
     setX(
-      (e.touches ? e.touches[0].clientX : e.clientX) + window.scrollX - left!
+      (e.touches?.[0].clientX ?? e.clientX) + window.scrollX - left!
     )
-    setY((e.touches ? e.touches[0].clientY : e.clientY) + window.scrollY - top!)
+    setY((e.touches?.[0].clientY ?? e.clientY) + window.scrollY - top!)
   }
 
   const resetCoords = () => {
