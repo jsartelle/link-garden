@@ -9,6 +9,7 @@ if (process.env.NODE_ENV === 'development') {
 
 export default function useThemes() {
   const themes = readdirSync('./public/themes')
+  console.log(`Discovered ${themes.length} themes:`, themes)
 
   const cookieTheme = cookies().get('linkGardenSelectedTheme')?.value
   const defaultTheme = config.app?.defaultTheme
