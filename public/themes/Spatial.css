@@ -154,8 +154,6 @@ footer {
   position: absolute;
   right: var(--pico-spacing);
   align-self: center;
-  outline: 1px var(--v-pro-outline);
-  outline-offset: -1px;
 }
 
 .link-button-new-tab {
