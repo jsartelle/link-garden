@@ -43,7 +43,6 @@ export default function HoverCoordinates({
   }
 
   const resetCoords = () => {
-    console.log('resetCoords')
     setX(null)
     setY(null)
   }
