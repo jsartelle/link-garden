@@ -8,6 +8,7 @@ import useThemes from '@/app/util/themes'
 
 export default function Home() {
   const { themes, pageLoadTheme } = useThemes()
+  console.log('themes (in page)', themes)
 
   const dev = process.env.NODE_ENV === 'development'
 
