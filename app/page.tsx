@@ -24,6 +24,7 @@ export default function Home() {
               alt=""
               width={128}
               height={128}
+              priority
               draggable={false}
             />
           )}
