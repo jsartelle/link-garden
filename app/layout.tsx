@@ -34,6 +34,9 @@ export const metadata: Metadata = {
       url: appleIcon.src,
     },
   },
+  other: {
+    'darkreader-lock': 'meta'
+  },
 }
 
 export const viewport: Viewport = {
